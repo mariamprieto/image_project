@@ -1,14 +1,64 @@
------Paso Nro 01:-----
+Para sincronizar el repositorio en GitHub, el primer commit debe realizarse asi en el terminal:
+    git commit -m "first commit"
+    git branch -M main
+    git remote set-url origin <link del repositorio>
+    git push -u origin main
+
+----Paso Nro 01:-----
 Se crea una carpeta para cliente dentro de nuestro repositorio usando REACT, con el siguiente
 comando
 npx create-react-app cliente
------Paso Nro 02:-----
+----Paso Nro 02:-----
 Se crea una carpera llamada server 
 En otro terminal se selecciona esa carpeta y se ejecuta el comando para instalar Node
 npm init --yes
-----Paso Nro 03:-----
+----Paso Nro 03:----- Carpeta Server
 Instalamos express en esa misma carpeta server con el siguiente comando:
 npm install express
-----Paso Nro 04:-----
+----Paso Nro 04:-----Carpeta Server
 Cuando estan ambos paquetes creados, vamos a la carpeta server y creamos un archivo js llamado server
-alli sera almacenado el codigo del servidor
+alli sera almacenado el codigo del servidor donde se ejecutara el express para llamar la ruta del
+servidor mediante un call back.
+----Paso Nro 05:-----Carpeta Server
+Incluimos en el package json de la carpeta server, vamos agregar un nuevo scripts mediante un nuevo
+comando que permita reinicializar el nodemon automaticamente, este comando es asi:
+"start":"nodemon server.js" y cambiar  el nombre determinado en main: index.js, con la correcta carpeta
+en la cual esta direccionado nuestra ruta express, el cual es en este caso server.js
+----Paso Nro 06:-----Carpeta Server
+En el terminal de esta carpeta se ejecuta el comando nodemon:
+npm i nodemon --save-dev
+----Paso Nro 07:-----Carpeta Server
+Dentro de la carpeta server, se creara una carpeta donde se almacenen todas las rutas en un archivo 
+routes.js
+----Paso Nro 08:-----Carpeta Server
+En el archivo routes.js se determinarar el server router y se exportara ese modulo para ser usado 
+por el app express creado en el archivo server.js
+----Paso Nro 09:-----Carpeta Server
+Se inicializa el servidor  en el terminal de la carpeta server mediante el siguiente compando:
+npm run start  
+o tambien  se puede usar npm run start server
+Nota: En el terminal aparecera la puerta establecida http;//localhost:9000, lo cual si le damos
+control click esta va abrir en nuestra web.
+----Paso Nro 10:-----Carpeta cliente
+Luego nos ubicamos en el terminal de la carpeta cliente y inicializamos el React con el siguiente
+comando:
+npm start
+----Paso Nro 11:----Carpeta cliente
+Podemos eliminar los archivos que no vamos autilizar que son origen del demo de REACT, tales como:
+App.css, App.test.js, index.css,logo.svg, reporteWebVitals.js, setupTest.js
+----Paso Nro 12:-----Carpeta cliente
+Limpiamos el archivo index.js con los elementos que no utilizaremos como "importar logo".
+----Paso Nro 13:-----Carpeta cliente
+Actualizamos el App.js eliminando ya las rutas que no tendra, y los elementos que no utilizara porque 
+son los establecidos para el demo.
+----Paso Nro 14:-----Carpeta cliente
+Podemos crear un archivo CSS para esterilizar la pagina o podemos exportar la biblioteca bootstrap,
+de la siguiente forma, se va a la pagina web:
+https://getbootstrap.com/docs/5.2/getting-started/introduction/#cdn-links
+y se copia el link CSS,que se colocara en el index.html en el parte del head 
+y se copia el link de javaScript, que se colocara en el index.html en el body.
+----Paso Nro 15:-----Carpeta cliente
+Ahora trabajamos con el archivo App.js para crear nuestro elementos que permitiran la busquedad y carga
+de la imagen.
+
+
