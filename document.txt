@@ -1,0 +1,14 @@
+-----Paso Nro 01:-----
+Se crea una carpeta para cliente dentro de nuestro repositorio usando REACT, con el siguiente
+comando
+npx create-react-app cliente
+-----Paso Nro 02:-----
+Se crea una carpera llamada server 
+En otro terminal se selecciona esa carpeta y se ejecuta el comando para instalar Node
+npm init --yes
+----Paso Nro 03:-----
+Instalamos express en esa misma carpeta server con el siguiente comando:
+npm install express
+----Paso Nro 04:-----
+Cuando estan ambos paquetes creados, vamos a la carpeta server y creamos un archivo js llamado server
+alli sera almacenado el codigo del servidor
