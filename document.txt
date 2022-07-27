@@ -12,28 +12,28 @@ npx create-react-app cliente
 Se crea una carpera llamada server 
 En otro terminal se selecciona esa carpeta y se ejecuta el comando para instalar Node
 npm init --yes
-----Paso Nro 03:----- Carpeta Server
+----Paso Nro 03:-----Carpeta server
 Instalamos express en esa misma carpeta server con el siguiente comando:
 npm install express
-----Paso Nro 04:-----Carpeta Server
+----Paso Nro 04:-----Carpeta server
 Cuando estan ambos paquetes creados, vamos a la carpeta server y creamos un archivo js llamado server
 alli sera almacenado el codigo del servidor donde se ejecutara el express para llamar la ruta del
 servidor mediante un call back.
-----Paso Nro 05:-----Carpeta Server
+----Paso Nro 05:-----Carpeta server
 Incluimos en el package json de la carpeta server, vamos agregar un nuevo scripts mediante un nuevo
 comando que permita reinicializar el nodemon automaticamente, este comando es asi:
 "start":"nodemon server.js" y cambiar  el nombre determinado en main: index.js, con la correcta carpeta
 en la cual esta direccionado nuestra ruta express, el cual es en este caso server.js
-----Paso Nro 06:-----Carpeta Server
+----Paso Nro 06:-----Carpeta server
 En el terminal de esta carpeta se ejecuta el comando nodemon:
 npm i nodemon --save-dev
-----Paso Nro 07:-----Carpeta Server
+----Paso Nro 07:-----Carpeta server
 Dentro de la carpeta server, se creara una carpeta donde se almacenen todas las rutas en un archivo 
 routes.js
-----Paso Nro 08:-----Carpeta Server
+----Paso Nro 08:-----Carpeta server
 En el archivo routes.js se determinarar el server router y se exportara ese modulo para ser usado 
 por el app express creado en el archivo server.js
-----Paso Nro 09:-----Carpeta Server
+----Paso Nro 09:-----Carpeta server
 Se inicializa el servidor  en el terminal de la carpeta server mediante el siguiente compando:
 npm run start  
 o tambien  se puede usar npm run start server
@@ -60,5 +60,20 @@ y se copia el link de javaScript, que se colocara en el index.html en el body.
 ----Paso Nro 15:-----Carpeta cliente
 Ahora trabajamos con el archivo App.js para crear nuestro elementos que permitiran la busquedad y carga
 de la imagen.
+En esta parte se determina el evento que queremos captar, en este caso es onChange y tambien se declara 
+la función donde que ejecutara dicho evento cuando ocurra, y luego almacenar el estado del componente usando
+useState(para usar el useState necesitamos importarlo)
+const formData = new FormData() es un constructor de javaScript que permite formatear la imagen
+----Paso Nro 16:-----Carpeta server
+Despues de crear todas las funciones en el paso 15, vamos a la carpeta server y creamos una nueva ruta
+para obtener mediante post la imagen que estamos cargando.
+Para esto es necesario ejecutar un middleware antes,porque los archivos de imagen no son entendido directamente
+por el servidor
+----Paso Nro 17:-----Carpeta server
+Se detiene el servidor (Ctrl+C), y se instala el middleware con el comando del middlewareque se va usar, en este caso
+se usara el siguiente comando:
+        npm i multer
 
-
+----Paso Nro 18:-----Carpeta server
+Despues de instalado el multer, en el archivo routes hacemos el llamado, mediante una constante como se
+realiza con express.Tambien se debe configurar el multer.
