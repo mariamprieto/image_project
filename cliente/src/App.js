@@ -4,51 +4,54 @@ function App() {
 
   const [file, setFile] = useState(null)
 
-  const selectHandler = e => {
+  const selectedHandler = e => {
     setFile(e.target.files[0])
   }
+
   const sendHandler = () => {
     if (!file) {
-      alert('Você deve selecionar um arquivo')
+      alert('you must upload file')
       return
     }
 
-    const formData = new FormData()
-    formData.append('image', file)
+    const formdata = new FormData()
+    formdata.append('image', file)
+
     fetch('http://localhost:9000/images/post', {
       method: 'POST',
-      body: formData
+      body: formdata
     })
       .then(res => res.text())
       .then(res => console.log(res))
       .catch(err => {
         console.error(err)
       })
-    document.getElementById('fileInput').value = null
-    setFile(null)
 
+    document.getElementById('fileinput').value = null
+
+    setFile(null)
   }
 
   return (
     <Fragment>
-      <nav className='navbar navbar-dark bg-dark'>
-        <div className='container'>
-          <a href='#!' className='navbar-brand'> Image App</a>
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container">
+          <a href="#!" className="navbar-brand">Image App</a>
         </div>
       </nav>
-      <div className='container mt-5'>
-        <div className='card p-3'>
-          <div className='row'>
-            <div className='col-10'>
-              <input id="fileInput" onChange={selectHandler} className='form-control' type='file' />
+
+      <div className="container mt-5">
+        <div className="card p-3">
+          <div className="row">
+            <div className="col-10">
+              <input id="fileinput" onChange={selectedHandler} className="form-control" type="file" />
             </div>
-            <div className='col-2'>
-              <button onClick={sendHandler} type='button' className='btn btn-primary col-12'> Upload</button>
+            <div className="col-2">
+              <button onClick={sendHandler} type="button" className="btn btn-primary col-12">Upload</button>
             </div>
           </div>
         </div>
       </div>
-
     </Fragment>
   );
 }

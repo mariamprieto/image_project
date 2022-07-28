@@ -1,9 +1,9 @@
 
-
 const express = require('express')
 const mysql = require('mysql2')
 const myconn= require('express-myconnection')
 const app = express()
+const cors= require('cors')
 
 
 app.use(myconn(mysql, {
@@ -13,6 +13,8 @@ app.use(myconn(mysql, {
     password: 'abc123',
     database:'images'
 }))
+
+app.use(cors())
 
 app.use(require('./routes/routes'))
 app.listen(9000, () => {

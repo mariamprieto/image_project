@@ -104,6 +104,13 @@ Se crea la base de datos, usando MySQL Shell usando los siguientes comandos:
                     primary key (id));
         consultamos la tabla elaborada con
                     describe imnage;
-----Paso Nro 21:-----Caperta server
+----Paso Nro 21:-----Carpeta server
 Cuando este corriendo el servidor, entonces establecemos en ruta para tomar la informacion de la 
 imagen en la tabla
+si al correr la ruta da error, se debe renombrar la carpeta mysql2 y eliminar la mysql y correr de nuevo
+npm run start mysql2
+----Paso Nro 22:-----Carpeta server
+Instalar cors
+npm i cors
+esto es para que deje hacer peticiones desde cliente
+
