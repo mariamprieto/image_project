@@ -77,3 +77,33 @@ se usara el siguiente comando:
 ----Paso Nro 18:-----Carpeta server
 Despues de instalado el multer, en el archivo routes hacemos el llamado, mediante una constante como se
 realiza con express.Tambien se debe configurar el multer.
+----Paso Nro 19:-----Carpeta server
+Instalar el sq server para poder almacenar las imagenes en una base de datos, mediante el siguiente comando
+npm i mysql express-myconnection
+----Paso Nro 20:-----Carpeta server
+Luego que se instala el mysql, se llama ese modulo mysql y express-myconnection en nuestro archivo server.js
+se determina la ruta y configiracion de my connection express de mysql
+----Paso Nro 21:-----MySQL Shell
+Se crea la base de datos, usando MySQL Shell usando los siguientes comandos:
+        para cambiar de JS a SQL 
+                \sql 
+        para realizar la conexion con MySQL
+                \connect root@localhost
+        luego se crea pide el password, despues que se realiza la conexion, se crea la base de datos
+                create database images;
+        validamos que fue creada mediante el siguiente comando
+                show databases
+        luego se selecciona esa database con
+                use images(nombre de la database)
+        creamos la tabla:
+                create table image(
+                    id int not null auto_increment,
+                    type varchar(200),
+                    name varchar(200),
+                    data LONGBLOB,
+                    primary key (id));
+        consultamos la tabla elaborada con
+                    describe imnage;
+----Paso Nro 21:-----Caperta server
+Cuando este corriendo el servidor, entonces establecemos en ruta para tomar la informacion de la 
+imagen en la tabla
